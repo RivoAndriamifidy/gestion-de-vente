@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.* ?>
+<?import javafx.geometry.Insets ?>
+<?import javafx.scene.control.* ?>
+<?import javafx.scene.layout.* ?>
+<?import javafx.scene.paint.Color ?>
+<?import javafx.scene.text.Font ?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" stylesheets="@../../assests/style/css.css" fx:controller="sample.controller.CommandeController.AjouterCommandeController">
+
+    <VBox spacing="10">
+        <padding>
+            <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+        </padding>
+        <Label text="Ajouter une Commande" textFill="#000000">
+            <font>
+                <Font name="System" size="24.0" />
+            </font>
+            
+        </Label>
+
+        <HBox spacing="10">
+            <JFXTextField fx:id="clientName" promptText="Nom du Client" />
+            <JFXComboBox fx:id="allproduit" promptText="Sélectionnez un Produit" />
+        </HBox>
+
+        <HBox spacing="10">
+            <JFXTextField fx:id="quantity" promptText="Quantité" />
+            <JFXDatePicker fx:id="datech" promptText="Date de la Commande" />
+        </HBox>
+
+        <HBox spacing="10">
+            <JFXTextField fx:id="adresse" promptText="Adresse" />
+            <JFXComboBox fx:id="status" promptText="Statut" />
+        </HBox>
+
+        <JFXButton fx:id="add" text="Ajouter au Panier" onAction="#AddToPanier" />
+
+        <Label text="Panier" textFill="#000000">
+            <font>
+                <Font name="System" size="18.0" />
+            </font>
+        </Label>
+
+        <TableView fx:id="tab_Panier" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="id_commande" text="ID" />
+                <TableColumn fx:id="produitPanier_col" text="Produit" />
+                <TableColumn fx:id="quantitePanier_col" text="Quantité" />
+                <TableColumn fx:id="clientPanier_col" text="Client" />
+                <TableColumn fx:id="prixPanier_col" text="Prix" />
+                <TableColumn fx:id="adressPanier_col" text="Adresse" />
+                <TableColumn fx:id="statusPanier_col" text="Statut" />
+                <TableColumn fx:id="DatePanier_col" text="Date" />
+                <TableColumn fx:id="totalPanier_col" text="Total" />
+            </columns>
+        </TableView>
+
+        <HBox spacing="10">
+            <JFXTextField fx:id="Total_col" text="0.00 Ar" />
+            <JFXButton fx:id="Save" text="Enregistrer Commande" onAction="#SavePanier" />
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="1009.0" styleClass="ancho" stylesheets="@../../assests/style/css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.CommandeController.CommandeController">
+   <children>
+      <VBox  layoutX="4.0" layoutY="140.0" prefHeight="614.0" prefWidth="963.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="140.0">
+         <children>
+            <GridPane  prefHeight="427.0" prefWidth="930.0">
+               <children>
+                  <TableView  fx:id="tab_Commandes" prefHeight="351.0" prefWidth="922.0" GridPane.rowIndex="1">
+                    <columns>
+                      <TableColumn fx:id="id_commande" text="IDCommande" />
+                      <TableColumn fx:id="client_col" text="Nom du Client" />
+                      <TableColumn fx:id="produit_col" text="Produit" />
+                      <TableColumn fx:id="prix_col" text="Prix" />
+                      <TableColumn fx:id="adress_col" text="Adresse" />
+                      <TableColumn fx:id="quantite_col" text="Quantité" />
+                      <TableColumn fx:id="status_col" text="Statut" />
+                      <TableColumn fx:id="total_col" text="Total en Ariary" />
+                      <TableColumn fx:id="Date_col" text="Date" />
+                    </columns>
+                  </TableView>
+                  <HBox  alignment="CENTER" prefHeight="44.0" prefWidth="833.0" spacing="10.0">
+                     <children>
+                         <JFXTextField fx:id="search" prefHeight="25.0" prefWidth="247.0" promptText="Search"/>
+                        <Button fx:id="searchB" mnemonicParsing="false" onAction="#searchB" prefHeight="32.0" prefWidth="32.0" text="🔍" styleClass="fontawesome"  textFill="#fffbfb"/>
+                        <Button mnemonicParsing="false" onAction="#Refresh" prefHeight="32.0" prefWidth="32.0" text="🔄" styleClass="fontawesome" textFill="#fffbfb"  />
+                        <Button fx:id="newcommaande" mnemonicParsing="false" onAction="#newcommandes" prefHeight="32.0" prefWidth="32.0" text="➕" styleClass="fontawesome" textFill="#fffbfb" />
+                        <Button fx:id="modicomm" mnemonicParsing="false" onAction="#modicomm" prefHeight="32.0" prefWidth="38.0" text="✏️" styleClass="fontawaesome" textFill="#fffbfb" />
+                        <Button fx:id="supcom" mnemonicParsing="false" onAction="#supcom" prefHeight="32.0" prefWidth="38.0" text="🗑️" styleClass="fontawesome" textFill="#fffbfb" />
+                        <Button fx:id="export" mnemonicParsing="false" onAction="#exportcsv" prefHeight="32.0" prefWidth="102.0" text="Exsport csv" textFill="#fffbfb" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <Label fx:id="Total" prefHeight="17.0" prefWidth="238.0" text="Total Commande"/>
+         </children>
+      </VBox>
+      <Pane prefHeight="116.0" prefWidth="832.0" style="-fx-background-color: #5471d2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Text layoutX="326.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Commandes"/>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
